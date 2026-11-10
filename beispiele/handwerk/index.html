@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Schreinerei Brandt – Möbel nach Maß</title>
+<meta name="description" content="Beispiel-Projekt: Website für eine fiktive Schreinerei.">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../basis.css">
+<style>
+  :root{--akzent:#a0673a;--akzent-hell:#f5e9de}
+  .schritt .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:2.6rem;color:var(--akzent);line-height:1}
+  .box{background:#fff;border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:var(--schatten)}
+  .box label{display:block;font-weight:600;font-size:.9rem;margin:1.2rem 0 .5rem}
+  .box label:first-child{margin-top:0}
+  .box .chips{margin-bottom:0;box-shadow:none}
+  input[type=range]{width:100%;accent-color:var(--akzent)}
+  .ergebnis{margin-top:1.6rem;padding:20px;border-radius:20px;background:var(--akzent-hell)}
+  .ergebnis .zahl{font-family:'Bricolage Grotesque';font-weight:800;font-size:3rem;letter-spacing:-.04em;color:var(--akzent);line-height:1.1}
+  .ergebnis small{color:var(--muted)}
+  .feld{width:100%;font:inherit;padding:.85rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+  textarea.feld{min-height:110px;resize:vertical}
+  .vier{grid-template-columns:repeat(4,1fr)}
+  .halb{grid-template-columns:1fr 1fr}
+  @media (max-width:900px){.box{padding:22px}.vier{grid-template-columns:1fr 1fr}.halb{grid-template-columns:1fr}}
+  @media (max-width:520px){.vier{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Beispiel-Projekt · fiktiver Betrieb · Website von <a href="../../">Velyo</a></div>
+
+<nav><div class="bar">
+  <a class="logo" href="#"><i>B</i>Schreinerei Brandt</a>
+  <ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#rechner">Preis</a></li></ul>
+  <a class="btn ak-btn" href="#anfrage">Angebot holen</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="heldbild">
+    <img src="../img/1512916194211-3f2b7f5f7de3-2000.jpg" alt="Holzküche nach Maß">
+    <div class="heldtext">
+      <span class="pill">🪵 Meisterbetrieb seit 1988 · ★ 4,9</span>
+      <h1>Möbel, die bleiben.</h1>
+      <p>Einbauschränke, Küchen und Treppen aus echtem Holz. Genau für deinen Raum gebaut und gemacht für die nächsten 40 Jahre.</p>
+      <div class="ctas"><a class="btn ak-btn" href="#anfrage">Kostenloses Angebot →</a><a class="btn hell" href="#rechner">Preis schätzen</a></div>
+    </div>
+  </div>
+</div></header>
+
+<div class="band" aria-hidden="true"><div data-woerter="Massivholz|Made in Germany|Festpreis-Garantie|Eigene Werkstatt|35 Jahre Erfahrung"></div></div>
+
+<section id="leistungen"><div class="wrap">
+  <div class="kopf reveal"><div><span class="kicker">Leistungen</span><h2>Was wir bauen</h2></div><p>Von der ersten Skizze bis zum Einbau: alles aus einer Hand, aus unserer eigenen Werkstatt.</p></div>
+  <div class="bento">
+    <div class="kachel foto b2 r2 reveal"><img loading="lazy" src="../img/1761656630581-69a58e4e1c09-1200.jpg" alt="Moderne Küche mit Holzfronten"><span class="cap">Küchen</span></div>
+    <div class="kachel text reveal"><span class="marke">01</span><div><h3>Einbau&shy;schränke</h3><p>Dachschräge, Nische, Flur: jeder Zentimeter genutzt.</p></div></div>
+    <div class="kachel foto reveal"><img loading="lazy" src="../img/1613914049786-b7e3e8323348-700.jpg" alt="Holztisch mit Stühlen"><span class="cap">Tische</span></div>
+    <div class="kachel foto reveal"><img loading="lazy" src="../img/1687422810663-c316494f725a-700.jpg" alt="Schreiner bei der Arbeit"><span class="cap">Handarbeit</span></div>
+    <div class="kachel text dunkel reveal"><span class="marke" style="background:rgba(255,255,255,.12);color:#fff">02</span><div><h3>Reparaturen</h3><p>Lieblingsmöbel retten statt wegwerfen.</p></div></div>
+    <div class="kachel text gelb b2 reveal"><span class="zahl">1.200+</span><span>fertige Projekte in der Region, viele davon über Empfehlung.</span></div>
+    <div class="kachel foto b2 reveal"><img loading="lazy" src="../img/1683115098516-9b8d5c643b5b-1200.jpg" alt="Werkzeugwand"><span class="cap">Unsere Werkstatt</span></div>
+  </div>
+</div></section>
+
+<section id="ablauf" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
+  <div class="kopf reveal"><div><span class="kicker">Ablauf</span><h2>So einfach geht's</h2></div><p>Keine versteckten Kosten. Du weißt immer, woran du bist.</p></div>
+  <div class="karten vier">
+    <div class="karte schritt reveal"><div class="n">1</div><h3>Anfrage</h3><p>Schreib uns kurz, was du vorhast. Gern mit Handyfoto.</p></div>
+    <div class="karte schritt reveal"><div class="n">2</div><h3>Aufmaß</h3><p>Wir messen bei dir aus und beraten dich, kostenlos.</p></div>
+    <div class="karte schritt reveal"><div class="n">3</div><h3>Festpreis</h3><p>Innerhalb einer Woche bekommst du dein Angebot.</p></div>
+    <div class="karte schritt reveal"><div class="n">4</div><h3>Einbau</h3><p>Pünktlich und sauber. Den Dreck nehmen wir mit.</p></div>
+  </div>
+</div></section>
+
+<section id="rechner"><div class="wrap">
+  <div class="kopf reveal"><div><span class="kicker">Preis-Schätzer</span><h2>Was kostet mein Möbel?</h2></div><p>Grobe Schätzung in 10 Sekunden. Den genauen Festpreis gibt's nach dem Aufmaß.</p></div>
+  <div class="zwei halb" id="anfrage">
+    <div class="box reveal">
+      <label>Was soll's werden?</label><div class="chips" data-k="art"><button class="chip on" data-v="900">Schrank</button><button class="chip" data-v="1500">Regalwand</button><button class="chip" data-v="2400">Küche</button></div>
+      <label>Holz</label><div class="chips" data-k="holz"><button class="chip on" data-v="1">Kiefer</button><button class="chip" data-v="1.35">Eiche</button><button class="chip" data-v="1.6">Nussbaum</button></div>
+      <label>Breite: <span id="bw">200</span> cm</label><input type="range" id="breite" min="60" max="500" step="10" value="200">
+      <div class="ergebnis"><small>Geschätzt ab</small><div class="zahl" id="preis">–</div><small>inkl. Einbau · unverbindlich</small></div>
+    </div>
+    <form class="box reveal" id="form">
+      <label for="n">Name</label><input class="feld" id="n" required>
+      <label for="m">E-Mail</label><input class="feld" type="email" id="m" required>
+      <label for="t">Was hast du vor?</label><textarea class="feld" id="t" placeholder="z. B. Einbauschrank unter der Dachschräge, ca. 3 m breit"></textarea>
+      <p style="margin-top:1.4rem"><button class="btn ak-btn" type="submit">Anfrage senden →</button></p>
+    </form>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="kopf reveal"><div><span class="kicker">Kunden sagen</span><h2>4,9 von 5 Sternen</h2></div><p>Zur Seite wischen. (Beispiel-Bewertungen, der Betrieb ist erfunden.)</p></div>
+  <div class="stimmen reveal">
+    <div class="stimme"><div class="sterne">★★★★★</div><p>„Unser Dachschrägen-Schrank passt auf den Millimeter. Wahnsinn!“</p><span>Familie R.</span></div>
+    <div class="stimme"><div class="sterne">★★★★★</div><p>„Festpreis gehalten, pünktlich fertig, super sauber gearbeitet.“</p><span>Michael T.</span></div>
+    <div class="stimme"><div class="sterne">★★★★★</div><p>„Omas alter Tisch sieht aus wie neu. Danke!“</p><span>Julia</span></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© Schreinerei Brandt (fiktiv) · Impressum · Datenschutz</span><span>Fotos: Unsplash · Website: <a href="../../">Velyo</a></span></div></footer>
+
+<script src="../basis.js"></script>
+<script>
+  const wahl={art:900,holz:1},br=document.getElementById('breite');
+  document.querySelectorAll('.chips[data-k]').forEach(g=>g.addEventListener('click',e=>{
+    const b=e.target.closest('.chip');if(!b)return;
+    g.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));wahl[g.dataset.k]=+b.dataset.v;rechne()}));
+  br.oninput=rechne;
+  function rechne(){document.getElementById('bw').textContent=br.value;
+    document.getElementById('preis').textContent=(Math.round(wahl.art*wahl.holz*(br.value/100)/50)*50).toLocaleString('de-DE')+' €'}
+  rechne();
+  document.getElementById('form').onsubmit=e=>{e.preventDefault();e.target.innerHTML='<h3 style="font-size:2rem">Danke! 🙌</h3><p style="color:var(--muted);margin-top:.6rem">Das ist eine Beispiel-Seite. Bei einem echten Betrieb käme die Anfrage jetzt per E-Mail an.</p>'};
+</script>
+</body>
+</html>
