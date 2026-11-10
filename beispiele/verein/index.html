@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LG Neckarufer – Laufen. Springen. Zusammen.</title>
+<meta name="description" content="Beispiel-Projekt: Website für einen fiktiven Leichtathletik-Verein.">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../basis.css">
+<style>
+  :root{--akzent:#2563eb;--akzent-hell:#e3ecff}
+  /* Hero ruhiger: dunklerer Verlauf, damit die Schrift nicht mit den Läufern kämpft */
+  .heldbild::after{background:linear-gradient(180deg,rgba(10,9,14,.35),rgba(10,9,14,.55) 45%,rgba(10,9,14,.88))}
+  .heldtext h1{font-size:clamp(2.6rem,7vw,5.8rem)}
+  .count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .count div{background:rgba(255,255,255,.08);border-radius:16px;text-align:center;padding:14px 4px}
+  .count b{display:block;font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1;letter-spacing:-.03em}
+  .count small{color:#a9a7b6;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
+  .termin{display:flex;gap:14px;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .termin:last-child{border:0}
+  .termin .datum{flex:none;width:58px;text-align:center;background:var(--akzent-hell);color:var(--akzent);border-radius:14px;padding:6px 0;font-weight:700;line-height:1.1}
+  .termin .datum b{display:block;font-family:'Bricolage Grotesque';font-size:1.4rem}
+  .termin small{color:var(--muted)}
+  .zeit{margin-top:1rem;font-weight:600;font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="demo">Beispiel-Projekt · fiktiver Verein · Website von <a href="../../">Velyo</a></div>
+
+<nav><div class="bar">
+  <a class="logo" href="#"><i>LG</i>LG Neckarufer</a>
+  <ul><li><a href="#termine">Termine</a></li><li><a href="#training">Training</a></li><li><a href="#verein">Verein</a></li></ul>
+  <a class="btn ak-btn" href="#mitmachen">Probetraining</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="heldbild">
+    <img src="../img/1502904550040-7534597429ae-2000.jpg" alt="Läufergruppe auf der Bahn">
+    <div class="heldtext">
+      <span class="pill">🏃 Leichtathletik seit 1972 · 340 Mitglieder</span>
+      <h1>Laufen. Springen. Zusammen.</h1>
+      <p>Vom ersten Kinderlauf bis zum Cross-Wettkampf. Bei uns trainieren Leute zwischen 6 und 74, und das erste Training ist gratis.</p>
+      <div class="ctas"><a class="btn ak-btn" href="#mitmachen">Kostenlos ausprobieren →</a><a class="btn hell" href="#training">Trainingszeiten</a></div>
+    </div>
+  </div>
+</div></header>
+
+<div class="band" aria-hidden="true"><div data-woerter="🥇 Mia S. · 3 km Cross U16|⚡ Jonas K. · 5000 m in 16:42|🥈 Staffel U18 · 4×100 m|🥉 Paul R. · Weitsprung 6,12 m|🥇 Anna L. · Halbmarathon W40"></div></div>
+
+<section id="termine"><div class="wrap">
+  <div class="kopf reveal"><div><span class="kicker">Termine</span><h2>Nächster Start</h2></div><p>Unsere Wettkämpfe dieser Saison. Melde dich beim Trainer, wenn du mitlaufen willst.</p></div>
+  <div class="bento" style="grid-auto-rows:auto">
+    <div class="kachel text dunkel b2 reveal" style="min-height:330px">
+      <div><span class="kicker" style="color:#93b4ff">Cross-Lauf · in Kürze</span><h3 style="font-size:2.2rem;margin-bottom:.4rem">Herbst-Cross am Fluss</h3><p>Start 10:00 · Sportpark · 3 / 6 / 9 km</p></div>
+      <div class="count" id="count"></div>
+    </div>
+    <div class="kachel foto reveal" style="min-height:330px"><img loading="lazy" src="../img/1700667879534-754ea67770d8-800.jpg" alt="Cross-Lauf"><span class="cap">Cross-Saison</span></div>
+    <div class="kachel text reveal" style="min-height:330px;justify-content:flex-start"><span class="kicker">Danach</span><div id="termine-liste"></div></div>
+  </div>
+</div></section>
+
+<section id="training" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
+  <div class="kopf reveal"><div><span class="kicker">Training</span><h2>Finde deine Gruppe</h2></div><p>Einfach antippen, was zu dir passt. Komm vorbei, ohne Anmeldung.</p></div>
+  <div class="reveal"><div class="chips" id="filter"></div></div>
+  <div class="karten" id="gruppen"></div>
+</div></section>
+
+<section id="verein"><div class="wrap">
+  <div class="bento">
+    <div class="kachel foto b2 r2 reveal"><img loading="lazy" src="../img/1526676317768-d9b14f15615a-1200.jpg" alt="Start aus dem Startblock"><span class="cap">Sprint-Training</span></div>
+    <div class="kachel text farbe reveal"><span class="zahl" data-n="340">0</span><span>Mitglieder</span></div>
+    <div class="kachel text gelb reveal"><span class="zahl" data-n="12">0</span><span>Trainer:innen</span></div>
+    <div class="kachel text reveal"><span class="zahl ak" data-n="52">0</span><span>Jahre Verein</span></div>
+    <div class="kachel text dunkel reveal"><span class="zahl" data-n="9">0</span><span>Trainings pro Woche</span></div>
+    <div class="kachel foto b2 reveal"><img loading="lazy" src="../img/1765972096707-a96418fa0c9b-1200.jpg" alt="Läufer im Nebel"><span class="cap">Lauftreff am Morgen</span></div>
+    <div class="kachel foto b2 reveal"><img loading="lazy" src="../img/1474546652694-a33dd8161d66-1200.jpg" alt="Laufbahn"><span class="cap">Unser Stadion</span></div>
+  </div>
+</div></section>
+
+<section id="mitmachen" style="padding-top:0"><div class="wrap">
+  <div class="aufruf reveal">
+    <span class="kicker" style="color:#93b4ff">Mitmachen</span>
+    <h2>Dein erstes Training ist gratis.</h2>
+    <p>Bring Sportschuhe und eine Trinkflasche mit, den Rest zeigen wir dir. Mitgliedschaft ab 8 € im Monat.</p>
+    <button class="btn" onclick="alert('Beispiel-Seite: Hier würde sich das Anmeldeformular öffnen.')">Probetraining anfragen →</button>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© LG Neckarufer e. V. (fiktiv) · Impressum · Datenschutz</span><span>Fotos: Unsplash · Website: <a href="../../">Velyo</a></span></div></footer>
+
+<script src="../basis.js"></script>
+<script>
+  // Termine immer in der Zukunft
+  const tag=864e5,t0=new Date();t0.setHours(10,0,0,0);
+  const ev=[['Herbst-Cross am Fluss','Sportpark',5],['Vereinsmeisterschaft','Halle Nord',19],['Silvesterlauf','5 km Altstadt',38],['Kinder-Olympiade','6–11 Jahre',61]].map(([n,o,d])=>({n,o,d:new Date(t0.getTime()+d*tag)}));
+  document.getElementById('termine-liste').innerHTML=ev.slice(1).map(e=>`<div class="termin"><div class="datum"><b>${e.d.getDate()}</b>${e.d.toLocaleDateString('de-DE',{month:'short'})}</div><div><b>${e.n}</b><br><small>${e.o}</small></div></div>`).join('');
+  function tick(){let s=Math.max(0,(ev[0].d-new Date())/1000);const v=[s/86400,s%86400/3600,s%3600/60,s%60].map(Math.floor);
+    document.getElementById('count').innerHTML=v.map((x,i)=>`<div><b>${String(x).padStart(2,'0')}</b><small>${['Tage','Std','Min','Sek'][i]}</small></div>`).join('')}
+  tick();setInterval(tick,1000);
+
+  // Trainingsgruppen
+  const gr=[['Kids','6–9 Jahre','Bambini','Laufen, Werfen, Springen, ganz spielerisch.','Mi 16:00 · Sportplatz'],['Kids','10–13 Jahre','Schüler:innen','Erste Disziplinen und Wettkämpfe.','Mo + Do 16:30'],['Jugend','14–19 Jahre','Jugend Lauf','Mittel- und Langstrecke, Cross im Winter.','Di + Do 17:30 · Stadion'],['Jugend','14–19 Jahre','Sprint & Sprung','Sprint, Weitsprung, Hochsprung.','Mo + Mi 17:30'],['Erwachsene','ab 20','Lauftreff','Locker in Gruppen, 6–12 km.','Di 19:00 · Brücke'],['Erwachsene','ab 20','Athletik','Kraft, Beweglichkeit, Technik.','Fr 18:30 · Halle']];
+  const f=document.getElementById('filter'),g=document.getElementById('gruppen');
+  function show(k){[...f.children].forEach(c=>c.classList.toggle('on',c.textContent===k));
+    g.innerHTML=gr.filter(x=>k==='Alle'||x[0]===k).map(([,a,n,d,z])=>`<div class="karte" style="animation:rein .4s both"><span class="marke">${a}</span><h3>${n}</h3><p>${d}</p><p class="zeit">🕑 ${z}</p></div>`).join('')}
+  ['Alle','Kids','Jugend','Erwachsene'].forEach(k=>{const b=document.createElement('button');b.className='chip';b.textContent=k;b.onclick=()=>show(k);f.appendChild(b)});
+  show('Alle');
+</script>
+</body>
+</html>
